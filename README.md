@@ -1,4 +1,4 @@
-# message-board
+# message
 
 > A Vue.js project
 
