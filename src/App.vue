@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-    <el-menu mode="horizontal" :default-active="activeIndex">
-      <el-menu-item index="1">
-        <router-link to="/Message">
+    <el-menu mode="horizontal"  :default-active="$route.path" :router="true" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+      <el-menu-item index="/Message" :route="{path: '/Message'}">
         留言窗口
-        </router-link>
       </el-menu-item>
-      <el-menu-item index="2">
-        <router-link to="/MessageList">
+      <el-menu-item index="/MessageList" :route="{path: '/MessageList'}">
         留言列表
-        </router-link>
       </el-menu-item>
     </el-menu>
-    <transition>
+    <transition :name="transitionName">
     <router-view>
     </router-view>
     </transition>
@@ -26,7 +22,7 @@ export default {
   /* eslint-disable */
   data() {
     return {
-      activeIndex: '1'
+      transitionName: 'slide-right' 
     }
   },
   
@@ -39,6 +35,9 @@ export default {
 </script>
 
 <style lang="less">
+body{
+  margin: 0
+}
 #app {
   font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,6 +49,7 @@ export default {
       text-decoration: none
     }
   }
+
 }
 
 </style>

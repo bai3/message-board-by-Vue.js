@@ -15,7 +15,7 @@
        </el-form-item>
        <el-form-item label="留言内容" prop="content" :rules="[{ required: true, message: '请输入内容', trigger: 'blur' }, { required: true, message: '请输入内容', trigger: 'blur' },
          { min: 10, max: 100, message: '长度在 10 到 100 个字符', trigger: 'blur,change' }]">
-         <el-input type="textarea" placeholder="请填写内容" v-model="form.content">
+         <el-input type="textarea":rows="4"  placeholder="请填写内容" v-model="form.content" resize="none">
          </el-input>
        </el-form-item>
        <!-- <el-form-item label="打分">
