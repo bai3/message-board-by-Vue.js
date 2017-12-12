@@ -7,6 +7,12 @@ thought the project is so easy,....sorry my english so bad,so I
 don't konw to say.
 用中文讲，就是没啥可说的。
 ## 项目地址 [liuyan.bai3.xyz](http://liuyan.bai3.xyz)
+### 技术栈
+- vue
+- element-ui
+- vue-router
+- webpack
+初步练习这些技能
 <br/>
 <div align="center">
 <img src="./src/assets/readme1.png"><br/>
