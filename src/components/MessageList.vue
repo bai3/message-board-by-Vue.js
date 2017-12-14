@@ -41,7 +41,7 @@ export default {
         alert('6666')
       }
     },
-   beforeCreate: function () {
+   beforeMount: function () {
       this.$http("http://www.bai3.xyz/comment/getlist")
           .then(response => {console.log(response);this.comments = response.data.reverse()})
     },

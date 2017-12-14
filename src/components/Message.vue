@@ -52,7 +52,21 @@
 
         this.$refs[formName].validate((valid) => {
           if (valid){
-            console.log(this.form.content+','+this.form.name+","+Date.parse(new Date())/1000);
+            // console.log(this.form.content+','+this.form.name+","+Date.parse(new Date())/1000);}
+          this.$http({
+            method: 'post',
+            url: 'http://www.bai3.xyz/comment/add',
+            data:{
+              "name": this.form.name,
+              "content": this.form.content
+            }
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
             let _self = this;
             this.$message({
               message: '留言成功，请去留言列表查看',
