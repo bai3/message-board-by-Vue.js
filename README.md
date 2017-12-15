@@ -6,7 +6,7 @@ This is my first Vue's project
 thought the project is so easy,....sorry my english so bad,so I
 don't konw to say.
 用中文讲，就是没啥可说的。
-## 项目地址 [liuyan.bai3.xyz](http://www.bai3.xyz/comment)
+## 项目地址 [www.bai3.xyz/comment](http://www.bai3.xyz/comment)
 ### 技术栈
 #### 前端
 - vue
