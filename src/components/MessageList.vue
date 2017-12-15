@@ -7,7 +7,7 @@
         </div>
         <div class="info" style="display: inline-block">
         <span style="font-size: 15px;color: #333;">{{todo.name}}</span><br/>
-        <span style="font-size: 12px;color: #969696;">{{todo.id+"楼."}}{{todo.create_time|data}}</span>
+        <span style="font-size: 12px;color: #969696;">{{todo.id+"楼."}}{{todo.create_time|date}}</span>
         </div>
       </div>
       {{todo.content}}
@@ -45,22 +45,20 @@ export default {
     },
    beforeMount: function () {
       this.$http("http://www.bai3.xyz/api/getlist/?format=json")
-          .then(response => {this.comments = response.data.reverse()});
-            this.$http("http://www.bai3.xyz/api/users/?format=json")
-          .then(response => {this.result = response.data})
+          .then(response => {this.comments = response.data});
     },
     
     filters: {
       // 时间戳过滤器
-      data: function (input){
-        var d = new Date(input*1000);
+      date: function (input){
+        var d = new Date(Date.parse(input));
         var year = d.getFullYear();
         var month = d.getMonth() + 1;
         var day = d.getDate() <10 ? '0' + d.getDate() : '' + d.getDate();
         var hour = d.getHours() <10 ? '0' + d.getHours() : '' + d.getHours();
         var minutes = d.getMinutes()<10 ? '0' + d.getMinutes() : '' + d.getMinutes();
         var seconds = d.getSeconds()<10 ? '0' + d.getSeconds() : '' + d.getSeconds();
-        return year+ '.' + month + '.' + day + ' ' + hour + ':' + minutes + ':' + seconds;
+        return year+ '-' + month + '-' + day + ' ' + hour + ':' + minutes + ':' + seconds;
       }
     }
 }

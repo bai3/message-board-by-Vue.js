@@ -55,7 +55,7 @@
             // console.log(this.form.content+','+this.form.name+","+Date.parse(new Date())/1000);}
           this.$http({
             method: 'post',
-            url: 'http://www.bai3.xyz/comment/add',
+            url: 'http://www.bai3.xyz/api/getlist/',
             data:{
               "name": this.form.name,
               "content": this.form.content
