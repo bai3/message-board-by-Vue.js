@@ -27,9 +27,11 @@ export default {
    /* eslint-disable */
     data() {
       let comments = [];
+      let result = [];
       return {
         comments,
         current: 1,
+        result
       }
     },
     methods: {
@@ -42,8 +44,10 @@ export default {
       }
     },
    beforeMount: function () {
-      this.$http("http://www.bai3.xyz/comment/getlist")
-          .then(response => {console.log(response);this.comments = response.data.reverse()})
+      this.$http("http://www.bai3.xyz/api/getlist/?format=json")
+          .then(response => {this.comments = response.data.reverse()});
+            this.$http("http://www.bai3.xyz/api/users/?format=json")
+          .then(response => {this.result = response.data})
     },
     
     filters: {
