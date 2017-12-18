@@ -14,7 +14,7 @@
          </el-input>
        </el-form-item>
        <el-form-item label="留言内容" prop="content" :rules="[{ required: true, message: '请输入内容', trigger: 'blur' }, { required: true, message: '请输入内容', trigger: 'blur' },
-         { min: 10, max: 100, message: '长度在 10 到 100 个字符', trigger: 'blur,change' }]">
+         { min: 5, max: 100, message: '长度在 5到 100 个字符', trigger: 'blur,change' }]">
          <el-input type="textarea":rows="4"  placeholder="请填写内容" v-model="form.content" resize="none">
          </el-input>
        </el-form-item>
@@ -70,6 +70,7 @@
             let _self = this;
             this.$message({
               message: '留言成功，请去留言列表查看',
+              duration: 1000,
               type: 'success',
               onClose: function(){
                 _self.form.name = "";

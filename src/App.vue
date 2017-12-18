@@ -38,6 +38,11 @@ export default {
 body{
   margin: 0
 }
+@media screen and (min-width: 1080px){
+  #app{
+    margin: 0 350px
+  }
+}
 #app {
   font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,7 +54,7 @@ body{
       text-decoration: none
     }
   }
-
 }
+
 
 </style>
