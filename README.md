@@ -7,6 +7,7 @@ thought the project is so easy,....sorry my english so bad,so I
 don't konw to say.
 用中文讲，就是没啥可说的。
 ## 项目地址 [www.bai3.xyz/comment](http://www.bai3.xyz/comment)
+> 线上版本因为前后端图片路由问题导致图片不显示，所以线上没更新。可以自行下载github库自行安装运行
 ### 技术栈
 #### 前端
 - vue
@@ -33,5 +34,5 @@ npm run build
 <img src="./src/assets/readme1.png"><br/>
 </div>
 <div align="center">
-<img src="./src/assets/readme2.png">
+<img src="./src/assets/readme.png">
 </div>
