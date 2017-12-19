@@ -68,7 +68,7 @@ export default {
         
       }
     },
-   beforeMount: function () {
+   created: function () {
       this.$http("http://www.bai3.xyz/api/getlist/?format=json")
           .then(response => {this.comments = response.data});
     },

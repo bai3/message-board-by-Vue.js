@@ -1,68 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://unpkg.com/marked@0.3.6"></script>
-    <script src="https://unpkg.com/lodash@4.16.0"></script>
-    <style>
-    html, body, #editor {
-    margin: 0;
-    height: 100%;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
+    <title>hello world</title>
+    <style type="text/css" media="screen">
+    .child-view {
+        position: absolute;
+        width: 100%;
+        transition: all .8s cubic-bezier(.55, 0, .1, 1);
     }
 
-    textarea, #editor div {
-    display: inline-block;
-    width: 49%;
-    height: 100%;
-    vertical-align: top;
-    box-sizing: border-box;
-    padding: 0 20px;
+    .slide-left-enter,
+    .slide-right-leave-active {
+        opacity: 0;
+        -webkit-transform: translate(500px, 0);
+        transform: translate(500px, 0);
     }
 
-    textarea {
-    border: none;
-    border-right: 1px solid #ccc;
-    resize: none;
-    outline: none;
-    background-color: #f6f6f6;
-    font-size: 14px;
-    font-family: 'Monaco', courier, monospace;
-    padding: 20px;
-    }
-
-    code {
-    color: #f66;
+    .slide-left-leave-active,
+    .slide-right-enter {
+        opacity: 0;
+        -webkit-transform: translate(-500px, 0);
+        transform: translate(-500px, 0);
     }
     </style>
 </head>
+
 <body>
-    <div id="editor">
-        <textarea :value="input" @input="update"></textarea>
-        <div v-html="compiledMarkdown"></div>
+    <div id="app">
+        <div>
+            <!-- 4、<router-link>默认会被渲染成一个 `<a>` 标签 ,to指令跳转到指定路径 -->
+            <router-link to="/home">Go to Home</router-link>
+            <router-link to="/about">Go to About</router-link>
+        </div>
+        <!-- 5、在页面上使用<router-view></router-view>标签，用于渲染匹配的组件 -->
+        <transition :name="transitionName">
+            <router-view class="child-view"></router-view>
+        </transition>
     </div>
+    <!-- 组件 -->
+    <template id="Home">
+        <div>
+            <h1> {{msg}}</h1>
+        </div>
+    </template>
+    <template id="About">
+        <div>
+            <h1> {{msg}}</h1>
+        </div>
+    </template>
+    <!-- 0、引入依赖库 -->
+    <script src="https://cdn.bootcss.com/vue/2.3.4/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
+    <script type="text/javascript">
+    /* 1、创建组件 */
+    var Home = Vue.extend({
+        template: '#Home',
+        data: function() {
+            return {
+                msg: 'Hello, vue router!'
+            }
+        }
+    });
+    var About = Vue.extend({
+        template: '#About',
+        data: function() {
+            return {
+                msg: 'This is the tutorial about vue-router.'
+            }
+        }
+    });
+
+    // 2. 创建 router 实例，然后传 `routes`路由映射 配置
+    var router = new VueRouter({
+        routes: [{
+                path: '/home',
+                component: Home
+            }, {
+                path: '/about',
+                component: About
+            }, {
+                path: '/',
+                component: Home
+            } //设置默认路径
+        ]
+    });
+
+    // 3. 创建和挂载根实例。记得要通过 router 配置参数注入路由，从而让整个应用都有路由功能
+    var vm = new Vue({
+        data: {
+            transitionName: 'slide-left'
+        },
+        router: router
+
+    }).$mount('#app');
+
+    // 现在，应用已经启动了！
+    </script>
 </body>
-<script>
-    new Vue({
-  el: '#editor',
-  data: {
-    input: '# hello'
-  },
-  computed: {
-    compiledMarkdown: function () {
-      return marked(this.input, { sanitize: true })
-    }
-  },
-  methods: {
-    update: _.debounce(function (e) {
-      this.input = e.target.value
-    }, 300)
-  }
-})
-</script>
+
 </html>
