@@ -3,7 +3,7 @@
     <div class="main" v-for="(todo, index) in comments">
       <div style="margin-bottom: 15px">
         <div style="display: inline-block">
-         <img :src="'/src/assets/'+header(index)" style="width:35px">
+         <img :src="header(index)" style="width:35px">
         </div>
         <div class="info" style="display: inline-block">
         <span style="font-size: 15px;color: #333;">{{todo.name}}</span><br/>
@@ -45,25 +45,25 @@ export default {
       header(index){
         switch(index%10){
           case 0:
-            return '头像男孩.png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像男孩.png';
           case 1:
-            return '头像女孩.png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像女孩.png';
           case 2:
-            return '头像男孩(1).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像男孩(1).png';
           case 3:
-            return '头像女孩(1).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像女孩(1).png';
           case 4:
-            return '头像男孩(2).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像男孩(2).png';
           case 5:
-            return '头像女孩(2).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像女孩(2).png';
           case 6:
-            return '头像男孩(3).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像男孩(3).png';
           case 7:
-            return '头像女孩(3).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像女孩(3).png';
           case 8:
-            return '头像男孩(4).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像男孩(4).png';
           case 9:
-            return '头像女孩(4).png';
+            return 'http://p00vufmn6.bkt.clouddn.com/image/head/头像女孩(4).png';
         }
         
       }
