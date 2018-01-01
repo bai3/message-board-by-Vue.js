@@ -22,7 +22,7 @@ export default {
   /* eslint-disable */
   data() {
     return {
-      transitionName,
+      transitionName: '',
     }
   },
   name: 'app',
