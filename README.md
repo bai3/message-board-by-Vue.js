@@ -46,5 +46,5 @@ npm run build
 <img src="./src/assets/readme1.png"><br/>
 </div>
 <div align="center">
-<img src="./src/assets/readme.png">
+<img src="./src/assets/readme.png" width="420px" height="677px">
 </div>
