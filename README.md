@@ -13,6 +13,12 @@
     添加了路由切换是动画效果(实际是想做移动端侧拉切换路由，没成功)
 - 2017/12/20
     将图片弄到七牛加载，解决vue图片加载问题，正式发布1.0.0版本
+    
+## 功能介绍
+
+- [x] 基本留言功能
+- [ ] 头像选择功能
+
 
 ### 技术栈
 #### 前端
@@ -40,5 +46,5 @@ npm run build
 <img src="./src/assets/readme1.png"><br/>
 </div>
 <div align="center">
-<img src="./src/assets/readme.png">
+<img src="./src/assets/readme.png" width="420px" height="677px">
 </div>
