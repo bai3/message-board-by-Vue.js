@@ -3,8 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import 'element-ui/lib/index.js'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
